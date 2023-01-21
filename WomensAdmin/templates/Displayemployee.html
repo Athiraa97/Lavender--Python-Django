@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<form action="">-->
+<!--    <h1><center> Admin Data</center></h1>-->
+<!--    <div class="col-lg-12 grid-margin stretch-card">-->
+<!--                <div class="card">-->
+<!--                  <div class="card-body">-->
+<!--                    <div class="table-responsive">-->
+<!--                      <table class="table table-bordered">-->
+<!--                        <thead>-->
+<!--                          <tr>-->
+<!--                            <th> Name </th>-->
+<!--                            <th> Email  </th>-->
+<!--                            <th> Mobile </th>-->
+<!--                              <th> Image </th>-->
+<!--                              <th> Password</th>-->
+<!--                              <th> CPassword</th>-->
+<!--                          </tr>-->
+<!--                        </thead>-->
+<!--                          <tbody>-->
+<!--                          {% for d in data %}-->
+<!--                          <tr>-->
+<!--                           <td>{{d.Name}}</td>-->
+<!--                              <td>{{d.Email}}</td>-->
+<!--                              <td>{{d.Mobile}}</td>-->
+<!--                              <td> <img src="{{d.Image.url}}" width="200px" height="100px"> </td>-->
+<!--                              <td>{{d.Password}}</td>-->
+<!--                              <td>{{d.CPassword}}</td>-->
+<!--                              <td>-->
+<!--                                  <form action="{% url 'editdata' dataid=d.id %}">-->
+<!--                                      <button type="submit" class="btn btn-primary mr-2">Edit</button>-->
+<!--                                  </form>-->
+<!--                              </td>-->
+<!--                              <td>-->
+<!--                                  <form action="{% url 'deletedata' dataid=d.id %}">-->
+<!--                                      <button type="submit" class="btn btn-primary mr-2">Delete</button>-->
+<!--                                  </form>-->
+<!--                              </td>-->
+<!--                          </tr>-->
+<!--                          {% endfor %}-->
+<!--                          </tbody>-->
+<!--                      </table>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--</form>-->
+<form action="">
+<div class="container-fluid" id="container-wrapper">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Employee Details</h1>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 mb-4">
+              <!-- Simple Tables -->
+              <div class="card">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+<!--                  <h6 class="m-0 font-weight-bold text-primary">Simple Tables</h6>-->
+                </div>
+                <div class="table-responsive">
+                  <table class="table align-items-center table-flush">
+                    <thead class="thead-light">
+                          <tr>
+                            <th> Name </th>
+                            <th> Email  </th>
+                            <th> Mobile </th>
+                              <th> Image </th>
+                              <th> Password</th>
+                              <th> CPassword</th>
+                          </tr>
+                    </thead>
+                      <tbody>
+                          {% for d in data %}
+                          <tr>
+                           <td>{{d.Name}}</td>
+                              <td>{{d.Email}}</td>
+                              <td>{{d.Mobile}}</td>
+                              <td> <img src="{{d.Image.url}}" width="200px" height="100px"> </td>
+                              <td>{{d.Password}}</td>
+                              <td>{{d.CPassword}}</td>
+                              <td>
+                                  <form action="{% url 'editdata' dataid=d.id %}">
+                                      <button type="submit" class="btn btn-primary mr-2">Edit</button>
+                                  </form>
+                              </td>
+                              <td>
+                                  <form action="{% url 'deletedata' dataid=d.id %}">
+                                      <button type="submit" class="btn btn-primary mr-2">Delete</button>
+                                  </form>
+                              </td>
+                          </tr>
+                          {% endfor %}
+                          </tbody>
+                  </table>
+                </div>
+                <div class="card-footer"></div>
+              </div>
+            </div>
+          </div>
+          <!--Row-->
+          <!-- Modal Logout -->
+        </div>
+    </form>
+</body>
+</html>
+{% endblock %}
